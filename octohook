@@ -4844,7 +4844,7 @@ function library:CreateSettingsTab(menu)
 
     themeSection:AddColor({text = "Accent", flag = "Accent", color = library.theme["Accent"], callback = function(c3)
         library.theme["Accent"] = c3
-        --library:SetTheme(library.theme)
+        library:SetTheme(library.theme)
         if not setByPreset and not setByConfig then 
             library.options.preset_theme:Select('Custom')
         end
