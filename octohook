@@ -4798,18 +4798,6 @@ function library:CreateSettingsTab(menu)
         setclipboard('discord.gg/seU6gab')
     end})
 
-    mainSection:AddButton({text = 'Rejoin Server', confirm = true, callback = function()
-        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId);
-    end})
-
-    mainSection:AddButton({text = 'Rejoin Game', confirm = true, callback = function()
-        game:GetService("TeleportService"):Teleport(game.PlaceId);
-    end})
-
-    mainSection:AddButton({text = 'Copy Join Script', callback = function()
-        setclipboard(([[game:GetService("TeleportService"):TeleportToPlaceInstance(%s, "%s")]]):format(game.PlaceId, game.JobId))
-    end})
-
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
         setclipboard(([[Roblox.GameLauncher.joinGameInstance(%s, "%s"))]]):format(game.PlaceId, game.JobId))
     end})
@@ -4841,8 +4829,7 @@ function library:CreateSettingsTab(menu)
     for _,v in next, library.themes do
         table.insert(themeStrings, v.name)
     end
-    local themeTab = menu:AddTab('Theme', 990);
-    local themeSection = themeTab:AddSection('Theme', 1);
+    local themeSection = settingsTab:AddSection('Theme', 1);
     local setByPreset = false
 
     themeSection:AddList({text = 'Presets', flag = 'preset_theme', values = themeStrings, callback = function(newTheme)
@@ -4862,10 +4849,10 @@ function library:CreateSettingsTab(menu)
         setByPreset = false
     end}):Select('Default');
 
-    for i, v in pairs(library.theme) do
-        themeSection:AddColor({text = i, flag = i, color = library.theme[i], callback = function(c3)
-            library.theme[i] = c3
-            library:SetTheme(library.theme)
+
+    themeSection:AddColor({text = "Accent", flag = "Accent", color = library.theme["Accent"], callback = function(c3)
+            library.theme["Accent"] = c3
+            --library:SetTheme(library.theme)
             if not setByPreset and not setByConfig then 
                 library.options.preset_theme:Select('Custom')
             end
