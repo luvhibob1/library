@@ -1,4 +1,4 @@
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/luvhibob1/library/main/octohook"))({cheatname = "Watermark"})
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/luvhibob1/library/main/octohook/source.lua"))({cheatname = "Watermark"})
 library:init()
 
 local menu = library.NewWindow({title = "Window", size = UDim2.new(0, 500, 0, 605)})
