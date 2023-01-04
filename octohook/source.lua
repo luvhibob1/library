@@ -4824,6 +4824,14 @@ function library:CreateSettingsTab(menu)
     local themeSection = settingsTab:AddSection('Theme', 2);
     local setByPreset = false
 
+    themeSection:AddColor({text = "Accent", flag = "Accent", color = library.theme["Accent"], callback = function(c3)
+        library.theme["Accent"] = c3
+        library:SetTheme(library.theme)
+        if not setByPreset and not setByConfig then 
+            library.options.preset_theme:Select('Custom')
+        end
+    end});
+
     themeSection:AddList({text = 'Presets', flag = 'preset_theme', values = themeStrings, callback = function(newTheme)
         if newTheme == "Custom" then return end
         setByPreset = true
@@ -4840,16 +4848,6 @@ function library:CreateSettingsTab(menu)
         end
         setByPreset = false
     end}):Select('Default');
-
-
-    themeSection:AddColor({text = "Accent", flag = "Accent", color = library.theme["Accent"], callback = function(c3)
-        library.theme["Accent"] = c3
-        library:SetTheme(library.theme)
-        if not setByPreset and not setByConfig then 
-            library.options.preset_theme:Select('Custom')
-        end
-    end});
-
 
     return settingsTab;
 end
