@@ -1,0 +1,66 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/luvhibob1/library/main/octohook"))({cheatname = "Watermark"})
+library:init()
+
+local menu = library.NewWindow({title = "Window", size = UDim2.new(0, 500, 0, 605)})
+
+local MiscellaneousTab1 = menu:AddTab("Tab")
+
+local SettingsTab = library:CreateSettingsTab(menu)
+
+local MiscellaneousTab = MiscellaneousTab1:AddSection("Section", 1)
+
+MiscellaneousTab:AddSeparator({text = "Main"})
+
+local tog = MiscellaneousTab:AddToggle(
+   {
+       text = "Enabled",
+       callback = function(bool)
+           
+       end
+   }
+)
+
+tog:AddBind(
+   {
+       nomouse = true,
+       noindicator = true,
+       bind = Enum.KeyCode.Q,
+       callback = function(key)
+           
+       end
+   }
+)
+
+MiscellaneousTab:AddBox({flag = "ds", text = "Prediction", class = 'box', input = "0.125"})
+
+
+[MiscellaneousTab:AddButton(
+   {
+       text = "Notification",
+       callback = function()
+           library:SendNotification(library.cheatname .. " | Notification", 3)
+       end
+   }
+)
+
+MiscellaneousTab:AddSlider({text = "Prediction", flag = "", min = 0.10000, max = 0.20000, increment = .00001})
+
+MiscellaneousTab:AddColor(
+   {
+       text = "Color",
+       flag = "",
+       callback = function()
+       end
+   }
+)
+
+MiscellaneousTab:AddList(
+   {
+       text = "Hit-Part",
+       values = {"Head", "UpperTorso", "HumanoidRootPart", "LowerTorso"},
+       callback = function(option)
+           
+       end
+   }
+)
+library.options.preset_theme:Select('Twitch')
