@@ -5775,7 +5775,7 @@ end
 
 
 
-local m_thread = task do
+--[[local m_thread = task do
     setreadonly(m_thread, false)
 
     function m_thread.spawn_loop(p_time, p_callback)
@@ -5788,9 +5788,23 @@ local m_thread = task do
     end
 
     setreadonly(m_thread, true)
-end
+end]]
 
 function library:SettingsPage(window)
+    local m_thread = task do
+    setreadonly(m_thread, false)
+
+    function m_thread.spawn_loop(p_time, p_callback)
+        m_thread.spawn(function()
+            while true do
+                p_callback()
+                m_thread.wait(p_time)
+            end
+        end)
+    end
+
+    setreadonly(m_thread, true)
+    end
     local settings_page = window:Page({name = "Settings", side = "Left"}) 
 
     local config_section = settings_page:Section({name = "Configuration", side = "Left"}) 
