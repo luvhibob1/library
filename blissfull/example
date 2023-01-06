@@ -1,0 +1,35 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/544464-46445/NAVY-UI/main/main.lua"))()
+
+local window = Library.NewWindow("Window", {window_size = Vector2.new(800, 600)})
+
+local f = window.NewPage("Page")
+
+local dar = f.NewCategory("Catergory")
+
+dar.NewButton("Button", function()
+    print('fasf')
+end)
+
+dar.NewToggle("Toggle", function(s) 
+    print(s)
+end, {default = false})
+
+dar.NewSlider("Slider", function(s) 
+    print(s)
+end, {decimals = 0.1, min = 1, max = 10, default = 1})
+
+dar.NewKeybind("Keybind", false, function(s)
+    print(s)
+end, {default = Enum.KeyCode.Q}) 
+
+dar.NewColorpicker("Colorpicker", function(s)
+    print(s)
+end, {default = Color3.fromRGB(255, 255, 255)})
+
+dar.NewDropdown("Dropdown", function(s)
+    print(s)
+end, {options = {"asf", "asd", "1"}, default = "1"})
+
+dar.NewPlayerChipset("Chipset", function(s)
+    print(s)
+end)
