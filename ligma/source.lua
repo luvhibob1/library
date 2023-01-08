@@ -1653,7 +1653,7 @@ do
           DisplayOrder = 0,
           Parent = game:GetService("CoreGui")
         })
-        syn.protect_gui(self.window)
+        --syn.protect_gui(self.window)
         self.position = position
         self.size = size
         self.title = title
