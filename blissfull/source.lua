@@ -1060,7 +1060,7 @@ Library.NewWindow = function(project_name, ui_info)
                     connection = UIS.InputBegan:Connect(function(input, gameProcessed)
                         if DESTROY_GUI then
                             connection:Disconnect()
-                        elseif not gameProcessed and input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode ~= Enum.KeyCode.Backspace then
+                        elseif not gameProcessed and input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode ~= Enum.KeyCode.Backspace and input.KeyCode == Enum.KeyCode.RightShift then
                             local newkey = false
                             if Current_Keybind ~= input.KeyCode then
                                 newkey = true
@@ -1080,7 +1080,7 @@ Library.NewWindow = function(project_name, ui_info)
                     connection2 = UIS.InputBegan:Connect(function(input, gameProcessed)
                         if DESTROY_GUI then
                             connection2:Disconnect()
-                        elseif not gameProcessed and input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.Backspace then
+                        elseif not gameProcessed and input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.Backspace and input.KeyCode ~= Enum.KeyCode.RightShift then
                             Detector.Text = "None"
                             SCALE()
                             Current_Keybind = nil
