@@ -185,7 +185,7 @@ Library.NewWindow = function(project_name, ui_info)
     local uibind = Enum.KeyCode.RightShift
     game:service('UserInputService').InputBegan:connect(function(Key)
         if Key.KeyCode == uibind then
-            structerer.Hide()
+            structurer.Hide()
         end
     end)
 
