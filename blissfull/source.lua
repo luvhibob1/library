@@ -305,7 +305,8 @@ Library.NewWindow = function(project_name, ui_info)
         local Scaling_Connection
         Scaling_Connection = function()
             if DESTROY_GUI then
-                Scaling_Connection:Disconnect()
+                game.CoreGui.Window:Destroy()
+                --Scaling_Connection:Disconnect()
             elseif UI_Toggled == false and Mouse_Scaling_Y then
                 local offset_mouse = Mouse.Y - Main_Window.AbsolutePosition.Y
 
