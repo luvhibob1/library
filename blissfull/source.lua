@@ -182,6 +182,14 @@ Library.NewWindow = function(project_name, ui_info)
         UI_Hid = not UI_Hid
         RCX.Enabled = not UI_Hid
     end
+    local uibind = Enum.KeyCode.RightShift
+    game:service('UserInputService').InputBegan:connect(function(Key)
+        if Key.KeyCode == uibind then
+            structerer.Hide()
+        end
+    end)
+
+
 
     -- PAGE SELECTOR 
     local Page_Holder = new("ScrollingFrame")
