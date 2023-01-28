@@ -38,6 +38,7 @@ local Library = {}
 
 Library.NewWindow = function(project_name, ui_info)
     local DESTROY_GUI = false
+    local window = {uibind = Enum.KeyCode.RightShift}
 
     local window_size = ui_info.window_size or v2(500, 340)
     local window_size_func = ui_info.window_size_func or function()end
@@ -182,9 +183,8 @@ Library.NewWindow = function(project_name, ui_info)
         UI_Hid = not UI_Hid
         RCX.Enabled = not UI_Hid
     end
-    local uibind = Enum.KeyCode.RightShift
     game:service('UserInputService').InputBegan:connect(function(Key)
-        if Key.KeyCode == uibind then
+        if Key.KeyCode == window.uibind then
             structurer.Hide()
         end
     end)
