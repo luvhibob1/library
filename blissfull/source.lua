@@ -38,7 +38,6 @@ local Library = {}
 
 Library.NewWindow = function(project_name, ui_info)
     local DESTROY_GUI = false
-    local window = {uibind = Enum.KeyCode.RightShift}
 
     local window_size = ui_info.window_size or v2(500, 340)
     local window_size_func = ui_info.window_size_func or function()end
@@ -136,7 +135,7 @@ Library.NewWindow = function(project_name, ui_info)
     Minimize_Button.TextColor3 = RGB(207, 207, 222)
     Minimize_Button.TextSize = 17.000
 
-    local structurer = {}
+    local structurer = {uibind = Enum.KeyCode.RightShift}
 
     -- TOGGLE UI
     local UI_Toggled = false
@@ -184,7 +183,7 @@ Library.NewWindow = function(project_name, ui_info)
         RCX.Enabled = not UI_Hid
     end
     game:service('UserInputService').InputBegan:connect(function(Key)
-        if Key.KeyCode == window.uibind then
+        if Key.KeyCode == structurer.uibind then
             structurer.Hide()
         end
     end)
