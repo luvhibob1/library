@@ -640,7 +640,7 @@ do
             --
             for i,v in next, library.hidden do
                 coroutine.wrap(function()
-                    if v[1] and v[1].Remove and v[1].__OBJECT_EXISTS then
+                    if v[1] and v[1].Remove then
                         local instance = v[1]
                         v[1] = nil
                         v = nil
