@@ -652,14 +652,12 @@ do
             --
             for i,v in pairs(library.drawings) do
                 coroutine.wrap(function()
-                    if v[1].__OBJECT_EXISTS then
                         local instance = v[1]
                         v[2] = nil
                         v[1] = nil
                         v = nil
                         --
                         instance:Remove()
-                    end
                 end)()
             end
             --
@@ -1663,7 +1661,7 @@ do
             --
             for i,v in next, library.hidden do
                 coroutine.wrap(function()
-                    if v[1] and v[1].Remove and v[1].__OBJECT_EXISTS then
+                    if v[1] and v[1].Remove then
                         local instance = v[1]
                         v[1] = nil
                         v = nil
@@ -1675,14 +1673,12 @@ do
             --
             for i,v in pairs(library.drawings) do
                 coroutine.wrap(function()
-                    if v[1].__OBJECT_EXISTS then
                         local instance = v[1]
                         v[2] = nil
                         v[1] = nil
                         v = nil
                         --
                         instance:Remove()
-                    end
                 end)()
             end
             --
