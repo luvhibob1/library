@@ -3483,7 +3483,6 @@ do
                             task.spawn(function()
                                 utility:LoadImage(button_gradient, "gradientdown", "https://i.imgur.com/DzrzUt3.png") 
                                 --
-                                task.wait(0.15)
                                 --
                                 utility:LoadImage(button_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png") 
                             end)
@@ -4882,7 +4881,6 @@ do
                 task.spawn(function()
                     utility:LoadImage(button_gradient, "gradientdown", "https://i.imgur.com/DzrzUt3.png") 
                     --
-                    task.wait(0.15)
                     --
                     utility:LoadImage(button_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png") 
                 end)
@@ -5014,7 +5012,6 @@ do
                     task.spawn(function()
                         utility:LoadImage(textbox_gradient, "gradientdown", "https://i.imgur.com/DzrzUt3.png") 
                         --
-                        task.wait(0.15)
                         --
                         utility:LoadImage(textbox_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png") 
                     end)
@@ -5074,7 +5071,6 @@ do
                         --
                         utility:LoadImage(textbox_gradient, "gradientdown", "https://i.imgur.com/DzrzUt3.png") 
                         --
-                        task.wait(0.15)
                         --
                         textbox_value.Color = textbox.current == "" and (placeholder and theme.textdark) or theme.textcolor
                         --
@@ -5180,7 +5176,6 @@ do
                     task.spawn(function()
                         utility:LoadImage(button_gradient, "gradientdown", "https://i.imgur.com/DzrzUt3.png") 
                         --
-                        task.wait(0.15)
                         --
                         utility:LoadImage(button_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png") 
                     end)
@@ -5363,8 +5358,7 @@ do
                     task.spawn(function()
                         utility:LoadImage(dropdown__gradient, "gradientdown", "https://i.imgur.com/DzrzUt3.png") 
                         --
-                        task.wait(0.15)
-                        --
+                          --
                         utility:LoadImage(dropdown__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png") 
                     end)
                     --
@@ -5715,7 +5709,6 @@ do
                     task.spawn(function()
                         utility:LoadImage(multibox__gradient, "gradientdown", "https://i.imgur.com/DzrzUt3.png") 
                         --
-                        task.wait(0.15)
                         --
                         utility:LoadImage(multibox__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png") 
                     end)
