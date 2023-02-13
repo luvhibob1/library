@@ -3,8 +3,8 @@ local settings = {
     default_accent = Color3.fromRGB(61, 100, 227); -- also stupid shit
 };
 
-local drawing = loadstring(game:HttpGet("https://raw.githubusercontent.com/zcryptic/lua/4617ff9cba95f935a37e85ce173c664180db9e21/drawing.lua"))();
-local tween = loadstring(game:HttpGet("https://raw.githubusercontent.com/vozoid/utility/main/Tween.lua"))()
+local drawing = loadstring(game:HttpGet("https://raw.githubusercontent.com/luvhibob1/library/main/deadcell/drawing"))();
+local tween = loadstring(game:HttpGet("https://raw.githubusercontent.com/luvhibob1/library/main/deadcell/tween"))()
 
 -- // UI LIBRARY
 if not isfolder(settings.folder_name) then
